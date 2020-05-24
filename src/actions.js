@@ -11,9 +11,10 @@ export const startGame = () => ({
   newWord: randomWords()
 })
 
-export const addCharacter = char => ({
+export const addCharacter = ({ char, missing }) => ({
   type: GUESS_TYPES.ADD_CHAR,
   char,
+  missing
 })
 
 export const endGame = () => ({

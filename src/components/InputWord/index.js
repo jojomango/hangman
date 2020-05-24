@@ -6,10 +6,14 @@ import { ReducerContext } from '../App';
 
 
 function InputWord() {
-  const { dispatch } = useContext(ReducerContext);
+  const { state, dispatch } = useContext(ReducerContext);
   const [word, setWord] = useState('');
   const onGuess = () => {
-    dispatch(addCharacter(word));
+    const missing = state.targetWord.indexOf(word) === -1;
+    dispatch(addCharacter({
+      char: word,
+      missing
+    }));
     setWord('');
   }
   return (

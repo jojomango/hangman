@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useEffect } from 'react';
 import { guessReducer, initState } from '../../reducers/index.js'
 import InputWord from '../InputWord';
+import Guessed from '../Guessed';
 import './App.scss';
 import { startGame } from '../../actions.js';
 
@@ -19,7 +20,10 @@ function App() {
             <InputWord />
           </div>
           <div className="guessed">
-            guessed
+            <Guessed
+              missCount={state.missCount}
+              guessedWords={state.guessedWords}
+            />
           </div>
         </div>
         <div className="right">

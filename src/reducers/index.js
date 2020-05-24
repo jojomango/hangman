@@ -20,6 +20,7 @@ const guessReducer = (state = initState, action) => {
           return {
             ...state,
             guessedWords: state.guessedWords.concat([action.char]),
+            missCount: action.missing ? state.missCount + 1 : state.missCount,
           }
       default:
           return state
