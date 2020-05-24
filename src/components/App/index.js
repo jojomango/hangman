@@ -1,27 +1,31 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import { guessReducer, initState } from '../../reducers/index.js'
+import InputWord from '../InputWord';
 import './App.scss';
+import { startGame } from '../../actions.js';
 
-const ReducerContext = createContext()
-
+export const ReducerContext = createContext();
 
 function App() {
   const [state, dispatch] = useReducer(guessReducer, initState);
+  useEffect(() => {
+    dispatch(startGame());
+  }, []);
   return (
     <ReducerContext.Provider value={{ state, dispatch }}>
-    <div className="App">
-      <div className="left">
-        <div className="input">
-         input
+      <div className="App">
+        <div className="left">
+          <div className="input">
+            <InputWord />
+          </div>
+          <div className="guessed">
+            guessed
+          </div>
         </div>
-        <div className="guessed">
-          guessed
+        <div className="right">
+          status panel
         </div>
       </div>
-      <div className="right">
-        status panel
-      </div>
-    </div>
     </ReducerContext.Provider>
   );
 }
