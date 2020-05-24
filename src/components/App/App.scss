@@ -1,15 +1,23 @@
+@import '~antd/dist/antd.css';
+
 .App {
-  text-align: center;
+  display: flex;
+  max-width: 1000px;
+  height: 100%;
+  margin: auto;
+  .left, .right {
+    flex: 1;
+  } 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.left {
+  display: flex;
+  flex-direction: column;
+  .input {
+    height: 200px;
+  }
+  .guessed {
+    flex: 1;
   }
 }
 
