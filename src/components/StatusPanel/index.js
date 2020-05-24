@@ -6,7 +6,14 @@ function StatusPanel() {
   const { state } = useContext(ReducerContext);
   const { targetWord, correctWords } = state;
   return (
-    <MaskWord targetWord={targetWord} correctWords={correctWords} />
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100%'
+    }}>
+      <MaskWord targetWord={targetWord} correctWords={correctWords} />
+    </div>
   )
 }
 
