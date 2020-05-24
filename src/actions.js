@@ -17,6 +17,7 @@ export const addCharacter = ({ char, missing }) => ({
   missing
 })
 
-export const endGame = () => ({
+export const endGame = win => ({
   type: GUESS_TYPES.END_GAME,
+  win,
 })
