@@ -7,27 +7,49 @@ import { ReducerContext } from '../App';
 
 function InputWord() {
   const { state, dispatch } = useContext(ReducerContext);
+  const { guessedWords } = state;
   const [word, setWord] = useState('');
+  const [errMsg, setErr] = useState('');
   const onGuess = () => {
     const missing = state.targetWord.indexOf(word) === -1;
     dispatch(addCharacter({
-      char: word,
+      char: word.toUpperCase(),
       missing
     }));
     setWord('');
   }
+  const onInputChange = val => {
+    const word = val.toUpperCase();
+    setWord(word);
+    if (guessedWords.indexOf(word) > -1) {
+      setErr('word be guessed!');
+    } else if (!/[A-Za-z]/.test(val)) {
+      setErr('must be English character')
+    } else {
+      setErr('');
+    }
+  }
   return (
+    <>
     <div className={styles.row}>
       <div className={styles.inputfield}>
-        <p>guess word</p>
+        <p className={styles.title}><b>Guess word</b></p>
         <Input
           placeholder="input a character"
           value={word}
-          onChange={e => setWord(e.target.value)}
+          maxLength={1}
+          onChange={e => onInputChange(e.target.value)}
         />
       </div>
-      <Button onClick={onGuess}>Guess!</Button>
+      <Button
+        disabled={word === '' || errMsg !== ''}
+        onClick={onGuess}
+      >
+        Guess!
+      </Button>
     </div>
+    {errMsg !== '' && (<p className={styles.error}>{errMsg}</p>)}
+    </>
   )
 }
 

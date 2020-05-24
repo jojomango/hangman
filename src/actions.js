@@ -8,7 +8,7 @@ export const GUESS_TYPES = {
 
 export const startGame = () => ({
   type: GUESS_TYPES.START_GAME,
-  newWord: randomWords()
+  newWord: randomWords().toUpperCase()
 })
 
 export const addCharacter = ({ char, missing }) => ({

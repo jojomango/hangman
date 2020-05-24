@@ -1,11 +1,16 @@
 .row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   .inputfield {
     width: 100px;
+    margin-right: 12px;
   }
 }
 
-p {
+.title {
   margin: 0;
+}
+
+.error {
+  color: red;
 }

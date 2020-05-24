@@ -2,6 +2,7 @@
 
 .App {
   display: flex;
+  padding: 15px;
   max-width: 1000px;
   height: 100%;
   margin: auto;
@@ -17,7 +18,7 @@
     height: 200px;
   }
   .guessed {
-    flex: 1;
+    height: 100px;
   }
 }
 

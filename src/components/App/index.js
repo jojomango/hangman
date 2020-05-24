@@ -32,15 +32,15 @@ function App() {
           <StatusPanel />
         </div>
         <div className="right">
-          <div className="input">
-            <InputWord />
-          </div>
           <div className="guessed">
             <Guessed
               missMax={state.missMax}
               missCount={state.missCount}
               guessedWords={state.guessedWords}
             />
+          </div>
+          <div className="input">
+            <InputWord />
           </div>
         </div>
       </div>
