@@ -13,7 +13,7 @@ function MaskWord({ targetWord, correctWords }) {
             fontSize: '50px'
           }}
         >
-          {correctWords.indexOf(w) > -1 ? w.toUpperCase() : '_'}
+          {correctWords.indexOf(w) > -1 ? w : '_'}
         </span>
       )}
     </>

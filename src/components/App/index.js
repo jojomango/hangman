@@ -27,6 +27,9 @@ function App() {
   }, [correctWords, missCount, targetWord, missMax]);
   return (
     <ReducerContext.Provider value={{ state, dispatch }}>
+      <div className="title">
+        <h1>Hangman</h1>
+      </div>
       <div className="App">
         <div className="left">
           <StatusPanel />
@@ -36,7 +39,7 @@ function App() {
             <Guessed
               missMax={state.missMax}
               missCount={state.missCount}
-              guessedWords={state.guessedWords}
+              missedWords={state.missedWords}
             />
           </div>
           <div className="input">

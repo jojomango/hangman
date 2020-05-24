@@ -11,10 +11,13 @@ function Result() {
       visible={showResult}
       footer={null}
       closable={false}
+      style={{
+        textAlign: 'center'
+      }}
     >
-      <h4>{win ? 'WIN': 'LOSE'}</h4>
-      <p>the word is</p>
-      {showResult && (<h4>{targetWord}</h4>)}
+      <h4>You {win ? 'WIN': 'LOSE'}!</h4>
+      <p style={{ margin: 0 }}>the word is</p>
+      {showResult && (<h3>"{targetWord}"</h3>)}
       <Button
         onClick={() => dispatch(startGame())}
       >
