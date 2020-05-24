@@ -6,7 +6,7 @@ function Guessed({ missCount, guessedWords }) {
       <p>Missing count: {missCount}/9</p>
       <p>Gussed words: {
         guessedWords.map((w, idx) => (
-          <span>{w}{idx !== guessedWords.length-1 ? ',':''}</span>
+          <span key={w}>{w}{idx !== guessedWords.length-1 ? ',':''}</span>
         ))
       }</p>
     </>

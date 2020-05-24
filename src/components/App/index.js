@@ -2,6 +2,7 @@ import React, { createContext, useReducer, useEffect } from 'react';
 import { guessReducer, initState } from '../../reducers/index.js'
 import InputWord from '../InputWord';
 import Guessed from '../Guessed';
+import StatusPanel from '../StatusPanel';
 import './App.scss';
 import { startGame } from '../../actions.js';
 
@@ -27,7 +28,7 @@ function App() {
           </div>
         </div>
         <div className="right">
-          status panel
+          <StatusPanel />
         </div>
       </div>
     </ReducerContext.Provider>

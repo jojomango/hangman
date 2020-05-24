@@ -5,6 +5,7 @@ const initState = {
   guessedWords: [],
   targetWord: 'default',
   showResult: false,
+  correctWords: [],
 }
 
 const guessReducer = (state = initState, action) => {
@@ -15,12 +16,14 @@ const guessReducer = (state = initState, action) => {
             guessedWords: [],
             targetWord: action.newWord,
             showResult: false,
+            correctWords: [],
           }
       case GUESS_TYPES.ADD_CHAR: 
           return {
             ...state,
             guessedWords: state.guessedWords.concat([action.char]),
             missCount: action.missing ? state.missCount + 1 : state.missCount,
+            correctWords: action.missing ? state.correctWords : state.correctWords.concat([action.char]),
           }
       default:
           return state
