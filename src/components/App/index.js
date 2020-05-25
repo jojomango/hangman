@@ -3,6 +3,7 @@ import { guessReducer, initState } from '../../reducers/index.js'
 import InputWord from '../InputWord';
 import Guessed from '../Guessed';
 import StatusPanel from '../StatusPanel';
+import HangPic from '../HangPic';
 import Result from '../Result';
 import './App.scss';
 import { startGame, endGame } from '../../actions.js';
@@ -33,6 +34,7 @@ function App() {
       <div className="App">
         <div className="left">
           <StatusPanel />
+          <HangPic />
         </div>
         <div className="right">
           <div className="guessed">

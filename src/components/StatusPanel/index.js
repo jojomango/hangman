@@ -10,7 +10,7 @@ function StatusPanel() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '100%'
+      height: '150px'
     }}>
       <MaskWord targetWord={targetWord} correctWords={correctWords} />
     </div>
