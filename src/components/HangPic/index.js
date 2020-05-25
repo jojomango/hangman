@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { ReducerContext } from '../App';
-// import styles from './index.scss';
 
 function HangPic() {
   const { state } = useContext(ReducerContext);
@@ -9,11 +8,16 @@ function HangPic() {
     <div style={{
       display: 'flex',
       justifyContent: 'center',
-      height:'300px'
+      height:'100%',
+      width: '100%'
     }}>
     {
       (missCount > 0) && (
-        <img alt="statusPic" src={`/hangman/${missCount}.svg`} />
+        <img
+          style={{ width: '100%' }}
+          alt="statusPic"
+          src={`/hangman/${missCount}.svg`}
+        />
       )
     }
     </div>
